@@ -1,0 +1,103 @@
+body {
+    margin: 0;
+    width: 100%;
+    min-height: 100vh;
+    background-image: url('../public/images/Vector 1.png');
+    background-repeat: no-repeat;
+    background-size: 60% 100%;
+    font-family: 'Montserrat', sans-serif;
+    position: relative;
+  }
+  .label{
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  display: flex;
+  align-items: center;
+  color: #7C7989;
+  }
+  .input{
+  width: 100%;
+  height: 50px;
+  background: #FCFBFC;
+  box-shadow: 1px 4px 4px rgba(0, 0, 0, 0.06);
+  border-radius: 10px;
+  }
+  .login{
+      width: 100%;
+  height: 39px;
+  background: #8A70D6;
+  border: 0;
+  }
+  .login:hover{
+  background: #9477ea;
+  }
+  .check{
+  display: flex;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 21px;
+  color: #716E7D;
+  margin-bottom: 1.5em;
+  gap: 10px;
+  width: 100%;
+  }
+  
+  .login-left {
+      padding: 10em 0px 0 0;
+  }
+  .ellipse1 {
+      position: absolute;
+      bottom: 80px;
+      right: 0px;
+      transform: scale(0.8);
+  }
+  .ellipse2 {
+      position: absolute;
+      top: -23px;
+      transform: scale(0.8);
+      right: 105px;
+  }
+  .ellipse3{
+      right: 0;
+      position: absolute;
+      bottom: -26px;
+      transform: scale(0.8);
+  }
+  .logo{
+      margin-top: 9em;
+      height: 18em;
+      padding: 1.5em;
+      will-change: filter;
+      transition: filter 300ms;
+  }
+  .form{
+      margin-left: -5em;
+  }
+  @media (max-width:767px) {
+      .main-login{
+          flex-direction: column-reverse;
+      }
+      .logo {
+          margin-top: 2em;
+          height: 12em;
+      }
+      .ellipse2 {
+          display: none;
+      }
+      .ellipse1 {
+          display: none;
+      }
+      .ellipse3 {
+          display: none;
+      }
+      .input{
+          width: 100%;
+      }
+      .form{
+          margin-left: 0em;
+      }
+      .login-left {
+          padding: 1em 0px 0 0;
+      }
+  }
