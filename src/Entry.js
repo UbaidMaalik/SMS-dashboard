@@ -1,7 +1,6 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Login from "./pages/Login";
-import Layout from "./pages/Layout";
 import DashBoard from "./pages/Dashboard/DashBoard";
 
 function Entry() {
@@ -10,7 +9,7 @@ function Entry() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<DashBoard />} />
-          <Route path="/layout" element={<Layout />} />
+          <Route path="/login" element={<Login />} />
         </Routes>
       </BrowserRouter>
     </>

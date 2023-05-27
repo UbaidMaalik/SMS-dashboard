@@ -1,24 +1,24 @@
-import React from 'react'
-
+import React from "react";
+import Sidebar from "../../components/dashboard/Sidebar";
+import Header from "../../components/dashboard/Header";
+import Student from "./Student";
 
 function DashBoard() {
-    return (
-        <div>
-        <div className=''>
-        <h1>header header header header....................</h1>
+  return (
+    <>
+      <div className="container-fluid">
+        <div className="row">
+          <div className="col-md-2">
+            <Sidebar />
+          </div>
+          <div className="col-md-10">
+            <Header />
+            <Student />
+          </div>
         </div>
-        <div className='row'>
-        <div className='col-sm-4'>
-            <h1>sidebar</h1>
-            <h1>sidebar</h1>
-            <h1>sidebar</h1>
-        </div>
-        <div className='col-sm-8'>
-            <h1>Main Gride this area will load other basic information  information </h1>
-        </div>
-        </div>
-        </div>
-    )
+      </div>
+    </>
+  );
 }
 
-export default DashBoard
+export default DashBoard;
