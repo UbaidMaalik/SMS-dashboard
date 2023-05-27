@@ -1,28 +1,16 @@
-/* body {
-    margin: 0;
-    width: 100%;
-    min-height: 100vh;
-    background-image: url('../public/images/Vector 1.png');
+.login-main-container{   
+    background-image: url('/src/shared/images/login_bg.jpg');
     background-repeat: no-repeat;
-    background-size: 60% 100%;
-    font-family: 'Montserrat', sans-serif;
-    position: relative; */
-    .login-main-container{
-        
-        background-image: url('/src/shared/images/login_bg.jpg');
-        background-repeat: no-repeat;
     height: 100vh;
     width: 100%;
     position: relative;
-    /* opacity: 0.8; */
 }
 button{
     background-color :#8A70D6 !important;
     color: #fff !important;
 }
 .login-container{
-     background: #f3edeb;
-  /* background-color: #8A70D6; */
+    background: #f3edeb;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -33,23 +21,18 @@ button{
   border-radius: 4px;
 }
 .forget-password{
-    
-        color: #303030;
-        font-size: 14px;
-        margin-top: 15px;
-        font-weight: 500;
-        text-align: center;
-    
+     color: #303030;
+    font-size: 14px;
+    margin-top: 15px;
+    font-weight: 500;
+    text-align: center; 
 }
-  .label{
+.label{
     font-size: 14px;
     text-transform: capitalize;
     color: black;
-
     font-weight: 500;
-
-    /* margin-bottom: 30px; */
-  }
+}
   .input{
     background-color: white;
     border-radius: 0px;
@@ -143,3 +126,109 @@ button{
           padding: 1em 0px 0 0;
       }
   }
+  /* HEADER STYLES */
+  img.logo-main {
+    width: 40%;
+}
+.logo-vertical {
+    text-align: center;
+    margin-bottom: 1em;
+}
+.sidebar {
+    padding-top: 2em;
+}
+  .search-input{
+    width: 220px;
+height: 40px;
+background: rgba(255, 255, 255, 0.5);
+box-shadow: 0px 0px 27px 2px rgba(0, 0, 0, 0.04);
+border-radius: 10px;
+margin-right: 1em;
+}
+.header{
+    padding: 2em 0 12px 0;
+    margin-bottom: 3.7em;
+}
+.page-title h3{
+    font-family: 'Poppins';
+font-style: normal;
+font-weight: 600;
+font-size: 28px;
+line-height: 42px;
+display: flex;
+align-items: center;
+color: #434041;
+}
+.notification{
+    width: 45px !important;
+height: 40px;
+box-shadow: 0px 0px 27px 2px rgba(0, 0, 0, 0.04);
+border-radius: 10px;
+}
+.notification:hover{
+    background: rgba(255, 255, 255, 0.5);
+}
+.ri-search-2-line{
+color: #434041;
+}
+.profile h3{
+    font-family: 'Poppins';
+font-style: normal;
+font-weight: 600;
+font-size: 22px !important;
+display: flex;
+align-items: center;
+color: #434041;
+line-height: 40px;
+}
+.edit{
+    width: 45px !important;
+    height: 40px;
+    box-shadow: 0px 0px 27px 2px rgba(0, 0, 0, 0.04);
+    border-radius: 10px;
+    margin-left: 5em;
+}
+.add-student{
+height: 40px;
+box-shadow: 0px 0px 27px 2px rgba(0, 0, 0, 0.04);
+border-radius: 5px;
+}
+.student-new{
+    display: flex;
+    justify-content: right;
+}
+.search-student{
+    background: #f7f7f7ff;
+}
+.search-student {
+    background: #f7f7f7ff;
+    margin-top: 1em;
+    border-radius: 5px;
+    box-shadow: 0 8px 18px rgba(0,0,0,.05);
+    padding: 1em;
+}
+.ri-search-line {
+    color: #434041;
+    border: 1px solid #9477ea;
+    padding: 13px;
+    border-radius: 5px;
+    position: absolute;
+    top: 190px;
+}
+.stdsearch-icon {
+    margin-bottom: 1.5em;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 2em;
+}
+.std-search-icon {
+    padding: 1px;
+    height: 2.8em;
+    width: 3em !important;
+}
+.add-std{
+    border-bottom: 1px solid #ccc;
+}
+.add-std h4{
+    font-size: 16px;
+    font-weight: bold;
+}
