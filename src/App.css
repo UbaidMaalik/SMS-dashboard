@@ -27,8 +27,8 @@ button{
   top: 50%;
   left: 50%;
   transform: translate(-50%,-50%);
-  height: 50vh;
-  width: 25%;
+  height: 60vh;
+  width: 20%;
   padding:2%;
   border-radius: 4px;
 }
