@@ -3,7 +3,7 @@ import Sidebar from "../../components/dashboard/Sidebar";
 import Header from "../../components/dashboard/Header";
 import Student from "./Student";
 
-function DashBoard() {
+function Dashboard() {
   return (
     <>
       <div className="container-fluid">
@@ -21,4 +21,4 @@ function DashBoard() {
   );
 }
 
-export default DashBoard;
+export default Dashboard;

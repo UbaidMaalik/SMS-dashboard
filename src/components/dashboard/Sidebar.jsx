@@ -1,19 +1,19 @@
 import { Layout, Menu } from "antd";
-import { Image } from "react-bootstrap";
 import { SidebarData } from "./SidebarData";
+import { NavLink } from "react-router-dom";
 
 const { Sider } = Layout;
 
 const Sidebar = () => {
-  console.log(SidebarData);
   return (
     <>
       <div className="sidebar">
         <Sider width={200}>
           <div className="logo-vertical">
-            <Image src="./images/Logo.png" className="logo-main" />
+            <h3>School Managment System</h3>
           </div>
           <Menu
+            className="sider-bg"
             mode="inline"
             defaultSelectedKeys={["1"]}
             style={{ height: "100%", borderRight: 0 }}
@@ -22,9 +22,11 @@ const Sidebar = () => {
               <Menu.Item
                 key={item.id}
                 icon={<i className={item.icon}></i>}
-                style={{ backgroundColor: "#ded4fc", color: "#8970d6" }}
+                style={{ color: "#fff" }}
               >
-                {item.title}
+                <NavLink to={item.path} className="sider-item">
+                  {item.title}
+                </NavLink>
               </Menu.Item>
             ))}
           </Menu>

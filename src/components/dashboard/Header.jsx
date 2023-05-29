@@ -13,7 +13,7 @@ const Header = () => {
             </div>
             <div className="col-md-4 search">
               <MyInput
-                className="search-input"
+                className="input-primary"
                 placeholder="Search"
                 prefix={<i className="ri-search-2-line"></i>}
               />
