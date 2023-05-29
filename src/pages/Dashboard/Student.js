@@ -1,12 +1,25 @@
 import { Select } from "antd";
 import MyButton from "../../components/common/MyButton";
 import MyInput from "../../components/common/MyInput";
-import { NavLink } from "react-router-dom";
 import SearchStudent from "../SearchStudent";
+import { useState } from "react";
+import MyModal from "../../components/common/MyModal";
+import MySelect from "../../components/common/MySelect";
 
 const { Option } = Select;
 
 const Student = () => {
+ const [IsAddNewModal, setIsAddNewModal] = useState(false);
+
+
+    const openStdModal = () =>{
+        setIsAddNewModal(true)
+    }
+    const genderOptions= [
+        {id:'1',value:'Male'},
+        {id:'2',value:'female'},
+        {id:'3',value:'other'},
+    ]
   return (
     <>
       <div className="container">
@@ -15,11 +28,12 @@ const Student = () => {
             <MyButton
               className="button-primary"
               type="primary"
-              htmlType="submit"
               icon={<i className="ri-add-line"></i>}
-            >
-              <NavLink to="/addstudent">Add New Student</NavLink>
-            </MyButton>
+              btnOnClick={openStdModal}
+             title="Add New Student"
+            />
+              {/* <NavLink to="/addstudent">Add New Student</NavLink>
+            </MyButton> */}
           </div>
           <div className="col-md-12 search-student">
             <div className="text-primary">
@@ -27,7 +41,7 @@ const Student = () => {
             </div>
             <div className="row">
               <div className="col-md-3 std-search-form">
-                <Select
+                {/* <Select
                   size="large"
                   showSearch
                   placeholder="Select Program"
@@ -37,7 +51,12 @@ const Student = () => {
                   <Option value="male">male</Option>
                   <Option value="female">female</Option>
                   <Option value="other">other</Option>
-                </Select>
+                </Select> */}
+                 <MySelect
+                                            onChange={(e)=>console.log(e)}
+                                            value={genderOptions?.value}
+                                            arrayOption={genderOptions}
+                                        />
               </div>
               <div className="col-md-3 std-search-form">
                 <Select
@@ -73,6 +92,15 @@ const Student = () => {
             <SearchStudent />
           </div>
         </div>
+
+
+        <MyModal title="Add New Student" isModalOpen={IsAddNewModal} handleCancel={()=>setIsAddNewModal(false)}> 
+        <MyInput
+                  size="large"
+                  className="input-primary w-100"
+                  placeholder="Student Name / Registration No. / CNIC No."
+                />
+        </MyModal>
       </div>
     </>
   );

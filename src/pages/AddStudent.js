@@ -49,7 +49,7 @@ const AddStudent = () => {
                   type="primary"
                   htmlType="submit"
                   icon={<i className="ri-search-eye-line"></i>}
-                ></MyButton>
+                />
               </div>
             </div>
           </div>

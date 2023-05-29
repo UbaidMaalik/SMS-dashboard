@@ -2,6 +2,7 @@ import { Radio, Space, Table, Tag, Modal } from "antd";
 import { Container, Row } from "react-bootstrap";
 import { useState } from "react";
 import MyButton from "../components/common/MyButton";
+import MySelect from "../components/common/MySelect";
 
 const SearchStudent = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
