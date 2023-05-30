@@ -4,9 +4,11 @@ import "./App.css";
 import Student from "./pages/Dashboard/Student";
 import { Layout, theme } from "antd";
 import HeaderContent from "./components/dashboard/HeaderContent";
-import Dashboard from "./pages/Dashboard/Dashboard";
+// import Dashboard from "./pages/Dashboard/Dashboard";
+import DashBoard from "./pages/Dashboard/DashBoard";
 import Sidebar from "./components/dashboard/Sidebar";
 import Staff from "./pages/Dashboard/Staff";
+import Login from "./pages/Login";
 const { Content } = Layout;
 
 function Entry() {
@@ -28,7 +30,8 @@ function Entry() {
             <Content className="p-3">
               <div>
                 <Routes>
-                  <Route path="/" element={<Dashboard />} />
+                  <Route path="/" element={<Login />} />
+                  <Route path="/dashBoard" element={<DashBoard />} />
                   <Route path="/student" element={<Student />} />
                   <Route path="/staff" element={<Staff />} />
                 </Routes>

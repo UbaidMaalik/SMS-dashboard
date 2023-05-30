@@ -1,6 +1,8 @@
 import { Button, Input } from "antd";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
+  const navigate = useNavigate();
   return (
     <>
       <section className="background-radial-gradient overflow-hidden">
@@ -53,8 +55,7 @@ const Login = () => {
                         prefix={<i className="ri-lock-unlock-fill"></i>}
                       />
                     </div>
-
-                    <Button className="login">Login</Button>
+                    <Button className="login" onClick={()=>navigate('/dashBoard')}>Login</Button>
                   </form>
                 </div>
               </div>
