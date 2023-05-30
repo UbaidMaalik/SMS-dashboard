@@ -6,7 +6,7 @@ import MyModal from "../../components/common/MyModal";
 import MySelect from "../../components/common/MySelect";
 import { InboxOutlined } from "@ant-design/icons";
 import { Upload } from "antd";
-const Student = () => {
+const Staff = () => {
   const [IsAddNewModal, setIsAddNewModal] = useState(false);
 
   const openStdModal = () => {
@@ -26,12 +26,12 @@ const Student = () => {
               type="primary"
               icon={<i className="ri-add-line"></i>}
               btnOnClick={openStdModal}
-              title="Add New Student"
+              title="Add New Teacher"
             />
           </div>
           <div className="col-md-12 search-student">
             <div className="text-primary">
-              <h3>Search Student</h3>
+              <h3>Search Teacher</h3>
             </div>
             <div className="row">
               <div className="col-md-3 std-search-form">
@@ -54,7 +54,7 @@ const Student = () => {
                 <MyInput
                   size="large"
                   className="input-primary w-100"
-                  placeholder="Student Name / Registration No. / CNIC No."
+                  placeholder="Teacher Name"
                 />
               </div>
               <div className="col-md-2 std-search-form">
@@ -93,7 +93,7 @@ const Student = () => {
                 <MyInput
                   size="large"
                   className="input-primary w-100 mb-2"
-                  placeholder="Student's Name"
+                  placeholder="Teacher's Name"
                 />
                 <MyInput
                   size="large"
@@ -197,4 +197,4 @@ const Student = () => {
   );
 };
 
-export default Student;
+export default Staff;

@@ -13,17 +13,18 @@ export const SidebarData = [
     icon: "ri-group-fill",
   },
   {
-    id: 3,
-    title: "Finance",
-    path: "/finance",
-    icon: "ri-bank-fill",
-  },
-  {
     id: 4,
     title: "Staff",
     path: "/staff",
     icon: "ri-group-fill",
   },
+  {
+    id: 3,
+    title: "Finance",
+    path: "/finance",
+    icon: "ri-bank-fill",
+  },
+
   {
     id: 5,
     title: "User Managment",

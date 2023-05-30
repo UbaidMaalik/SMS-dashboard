@@ -1,34 +1,41 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-// import Login from "./pages/Login";
-// import DashBoard from "./pages/Dashboard/Dashboard";
-import Sidebar from "./components/dashboard/Sidebar";
-import Header from "./components/dashboard/Header";
+import "./App.css";
 import Student from "./pages/Dashboard/Student";
-import AddStudent from "./pages/AddStudent";
-import SearchStudent from "./pages/SearchStudent";
+import { Layout, theme } from "antd";
+import HeaderContent from "./components/dashboard/HeaderContent";
+import Dashboard from "./pages/Dashboard/Dashboard";
+import Sidebar from "./components/dashboard/Sidebar";
+import Staff from "./pages/Dashboard/Staff";
+const { Content } = Layout;
 
 function Entry() {
+  const {
+    token: { colorBgContainer },
+  } = theme.useToken();
   return (
     <>
       <BrowserRouter>
-        <div className="container-fluid">
-          <div className="row">
-            <div className="col-md-2 sidebar-bg">
-              <Sidebar />
-            </div>
-            <div className="col-md-10 main-content">
-              <Header />
-              <Routes>
-                {/* <Route path="/" element={<DashBoard />} /> */}
-                {/* <Route path="/login" element={<Login />} /> */}
-                <Route path="/student" element={<Student />} />
-                <Route path="/addstudent" element={<AddStudent />} />
-                <Route path="/searchstudent" element={<SearchStudent />} />
-              </Routes>
-            </div>
-          </div>
-        </div>
+        <Layout>
+          <Sidebar />
+          <Layout>
+            <HeaderContent
+              style={{
+                padding: 0,
+                background: colorBgContainer,
+              }}
+            />
+            <Content className="p-3">
+              <div>
+                <Routes>
+                  <Route path="/" element={<Dashboard />} />
+                  <Route path="/student" element={<Student />} />
+                  <Route path="/staff" element={<Staff />} />
+                </Routes>
+              </div>
+            </Content>
+          </Layout>
+        </Layout>
       </BrowserRouter>
     </>
   );

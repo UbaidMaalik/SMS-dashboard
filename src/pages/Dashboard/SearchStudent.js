@@ -1,8 +1,6 @@
-import { Radio, Space, Table, Tag, Modal } from "antd";
+import { Radio, Table, Modal } from "antd";
 import { Container, Row } from "react-bootstrap";
 import { useState } from "react";
-import MyButton from "../components/common/MyButton";
-import MySelect from "../components/common/MySelect";
 
 const SearchStudent = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -61,21 +59,6 @@ const SearchStudent = () => {
               <i className="ri-eye-line"></i>
             </Radio.Button>
           </Radio.Group>
-          {/* <Space size="middle">
-            <MyButton
-              type="primary"
-              icon={<i className="ri-edit-line"></i>}
-              onClick={showModal}
-            ></MyButton>
-            <MyButton
-              type="danger"
-              icon={<i className="ri-delete-bin-line"></i>}
-            ></MyButton>
-            <MyButton
-              type="danger"
-              icon={<i className="ri-delete-bin-line"></i>}
-            ></MyButton>
-          </Space> */}
         </>
       ),
     },
