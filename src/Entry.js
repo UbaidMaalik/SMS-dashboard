@@ -9,6 +9,7 @@ import DashBoard from "./pages/Dashboard/DashBoard";
 import Sidebar from "./components/dashboard/Sidebar";
 import Staff from "./pages/Dashboard/Staff";
 import Login from "./pages/Login";
+import Finance from "./pages/Dashboard/Finance";
 const { Content } = Layout;
 
 function Entry() {
@@ -33,6 +34,7 @@ function Entry() {
                   <Route path="/" element={<Login />} />
                   <Route path="/dashBoard" element={<DashBoard />} />
                   <Route path="/student" element={<Student />} />
+                  <Route path="/finance" element={<Finance />} />
                   <Route path="/staff" element={<Staff />} />
                 </Routes>
               </div>

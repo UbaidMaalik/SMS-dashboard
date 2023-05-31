@@ -49,21 +49,21 @@ export const SidebarData = [
     title: "Finance",
     path: "/finance",
     icon: "ri-bank-fill",
-    children: [
-      {
-        id: 434,
-        title: "Item 1",
-        path: "/item1",
-        icon: "ri-bank-fill",
-      },
+    // children: [
+    //   {
+    //     id: 434,
+    //     title: "Item 1",
+    //     path: "/item1",
+    //     icon: "ri-bank-fill",
+    //   },
 
-      {
-        id: 2432,
-        title: "Item 2",
-        path: "/item1",
-        icon: "ri-bank-fill",
-      },
-    ],
+    //   {
+    //     id: 2432,
+    //     title: "Item 2",
+    //     path: "/item1",
+    //     icon: "ri-bank-fill",
+    //   },
+    // ],
   },
 
   {
