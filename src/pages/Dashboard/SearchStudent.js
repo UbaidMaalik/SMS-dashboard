@@ -90,7 +90,10 @@ const SearchStudent = () => {
     <>
       <Container>
         <Row>
-          <Table columns={columns} dataSource={data} />
+          <div className="responsive-table-container">
+            <Table columns={columns} dataSource={data} />
+          </div>
+
           <Modal
             title="Basic Modal"
             open={isModalOpen}
