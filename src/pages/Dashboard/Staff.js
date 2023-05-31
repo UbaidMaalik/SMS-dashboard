@@ -9,7 +9,7 @@ import { Upload } from "antd";
 const Staff = () => {
   const [IsAddNewModal, setIsAddNewModal] = useState(false);
 
-  const openStdModal = () => {
+  const openStaffModal = () => {
     setIsAddNewModal(true);
   };
   const genderOptions = [
@@ -25,7 +25,7 @@ const Staff = () => {
               className="button-primary"
               type="primary"
               icon={<i className="ri-add-line"></i>}
-              btnOnClick={openStdModal}
+              btnOnClick={openStaffModal}
               title="Add New Teacher"
             />
           </div>
