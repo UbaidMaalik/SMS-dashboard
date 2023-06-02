@@ -35,7 +35,7 @@ const Login = () => {
                 <div className="card-body px-4 py-5 px-md-5">
                   <form>
                     <div className="form-outline mb-4">
-                      <label className="form-label" for="form3Example3">
+                      <label className="form-label" htmlFor="form3Example3">
                         Email address
                       </label>
                       <Input
@@ -46,7 +46,7 @@ const Login = () => {
                     </div>
 
                     <div className="form-outline mb-4">
-                      <label className="form-label" for="form3Example4">
+                      <label className="form-label" htmlFor="form3Example4">
                         Password
                       </label>
                       <Input
@@ -55,7 +55,12 @@ const Login = () => {
                         prefix={<i className="ri-lock-unlock-fill"></i>}
                       />
                     </div>
-                    <Button className="login" onClick={()=>navigate('/dashBoard')}>Login</Button>
+                    <Button
+                      className="login"
+                      onClick={() => navigate("/dashBoard")}
+                    >
+                      Login
+                    </Button>
                   </form>
                 </div>
               </div>

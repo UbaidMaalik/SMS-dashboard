@@ -1,16 +1,16 @@
 import React from "react";
-import Sidebar from "../../components/dashboard/Sidebar";
-import HeaderContent from "../../components/dashboard/HeaderContent";
-import Student from "./Student";
+import DashboardCards from "./DashboardCards";
 
 function DashBoard() {
-    return (
-        <>
-        <div className="container-fluid">
-          <div className="row"></div>
+  return (
+    <>
+      <div className="container-fluid">
+        <div className="row">
+          <DashboardCards />
         </div>
-      </>
-    )
+      </div>
+    </>
+  );
 }
 
-export default DashBoard
+export default DashBoard;

@@ -31,7 +31,7 @@ const MySelect = forwardRef(
         maxTagCount="responsive"
         mode={mode}
         getPopupContainer={(trigger) => trigger.parentNode}
-        optionFilterProp="children"
+        optionFilterProp="items"
         allowClear={allowClear}
         showSearch
         style={style ? style : { width: "100%" }}

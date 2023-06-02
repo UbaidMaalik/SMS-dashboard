@@ -1,4 +1,5 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 
 const Finance = () => {
   return (
@@ -16,7 +17,9 @@ const Finance = () => {
             <div className="card">
               <img src="./images/fees.jpg" class="card-img-top" alt="..." />
               <div className="card-body">
-                <h5 className="card-title">Fees</h5>
+                <h5 className="card-title">
+                  <NavLink to="/fees">Fees</NavLink>
+                </h5>
               </div>
             </div>
           </div>

@@ -1,13 +1,11 @@
 import React from "react";
 import { Button } from "antd";
 
-function MyButton({ children, btnOnClick, className, type, icon,title }) {
+function MyButton({ children, btnOnClick, className, type, icon, title }) {
   return (
-    <Button onClick={btnOnClick} className={className} type={type} icon={icon}  >
+    <Button onClick={btnOnClick} className={className} type={type} icon={icon}>
       {title}
-      </Button>
-      
-   
+    </Button>
   );
 }
 

@@ -12,7 +12,7 @@ const Header = () => {
   return (
     <>
       <div className="header">
-        <div className="container">
+        <div className="container-fluid">
           <div className="row">
             <div className="col-md-9 col-6 page-title">
               <h3>Dashboard</h3>

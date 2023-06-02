@@ -371,6 +371,29 @@ border: 1px solid #ccc;
     box-shadow: 0px 0px 3px 0px #ccc;
     padding: 10px;
 }
+:where(.css-dev-only-do-not-override-w8mnev).ant-layout .ant-layout-sider-zero-width-trigger {
+    position: absolute;
+    top: 0px !important;
+    inset-inline-end: -40px;
+    z-index: 1;
+    width: 40px;
+    height: 40px;
+    color: #000 !important;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f5f5f5 !important;
+    border-start-start-radius: 0;
+    border-start-end-radius: 6px;
+    border-end-end-radius: 6px;
+    border-end-start-radius: 0;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+.page-title {
+    padding-left: 3em;
+}
 /* Finanace */
 .card {
     background: #222;
@@ -397,6 +420,72 @@ border: 1px solid #ccc;
     box-shadow: #222 1px 0 10px;
     text-decoration: underline;
   }
+  /* Dashboard Cards */
+  .card {
+    background-color: #fff;
+    border-radius: 10px;
+    border: none;
+    position: relative;
+    margin-bottom: 30px;
+    box-shadow: 0 0.46875rem 2.1875rem rgba(90,97,105,0.1), 0 0.9375rem 1.40625rem rgba(90,97,105,0.1), 0 0.25rem 0.53125rem rgba(90,97,105,0.12), 0 0.125rem 0.1875rem rgba(90,97,105,0.1);
+}
+.l-bg-cherry {
+    background: linear-gradient(to right, #493240, #f09) !important;
+    color: #fff;
+}
+
+.l-bg-blue-dark {
+    background: linear-gradient(to right, #373b44, #4286f4) !important;
+    color: #fff;
+}
+
+.l-bg-green-dark {
+    background: linear-gradient(to right, #0a504a, #38ef7d) !important;
+    color: #fff;
+}
+
+.l-bg-orange-dark {
+    background: linear-gradient(to right, #a86008, #ffba56) !important;
+    color: #fff;
+}
+
+.card .card-statistic-3 .card-icon-large .fas, .card .card-statistic-3 .card-icon-large .far, .card .card-statistic-3 .card-icon-large .fab, .card .card-statistic-3 .card-icon-large .fal {
+    font-size: 110px;
+}
+
+.card .card-statistic-3 .card-icon {
+    text-align: center;
+    line-height: 50px;
+    margin-left: 15px;
+    color: #000;
+    position: absolute;
+    right: -5px;
+    top: 20px;
+    opacity: 0.1;
+}
+
+.l-bg-cyan {
+    background: linear-gradient(135deg, #289cf5, #84c0ec) !important;
+    color: #fff;
+}
+
+.l-bg-green {
+    background: linear-gradient(135deg, #23bdb8 0%, #43e794 100%) !important;
+    color: #fff;
+}
+
+.l-bg-orange {
+    background: linear-gradient(to right, #f9900e, #ffba56) !important;
+    color: #fff;
+}
+
+.l-bg-cyan {
+    background: linear-gradient(135deg, #289cf5, #84c0ec) !important;
+    color: #fff;
+}
+.card-body {
+    background: #434041;
+}
 @media (max-width:767px) {
     .main-login{
         flex-direction: column-reverse;
