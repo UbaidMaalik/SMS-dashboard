@@ -7,15 +7,15 @@ export const SidebarData = [
   },
   {
     id: 2,
-    title: "Academics",
-    path: "/academics",
-    icon: "ri-table-line",
-  },
-  {
-    id: 3,
     title: "Student",
     path: "/student",
     icon: "ri-group-fill",
+  },
+  {
+    id: 3,
+    title: "Academics",
+    path: "/academics",
+    icon: "ri-table-line",
   },
   {
     id: 4,
