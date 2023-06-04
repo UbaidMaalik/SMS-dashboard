@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 
 const Login = () => {
   const navigate = useNavigate();
+  
   return (
     <>
       <section className="background-radial-gradient overflow-hidden">

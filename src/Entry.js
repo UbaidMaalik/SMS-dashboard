@@ -12,6 +12,7 @@ import Login from "./pages/Login";
 import Finance from "./pages/Dashboard/Finance";
 import Fees from "./pages/Dashboard/Fees";
 import Timetable from "./pages/Dashboard/Timetable";
+import Academics from "./pages/Dashboard/Academics";
 const { Content } = Layout;
 
 function Entry() {
@@ -39,7 +40,8 @@ function Entry() {
                   <Route path="/finance" element={<Finance />} />
                   <Route path="/staff" element={<Staff />} />
                   <Route path="/fees" element={<Fees />} />
-                  <Route path="/timetable" element={<Timetable />} />
+                  {/* <Route path="/timetable" element={<Timetable />} /> */}
+                  <Route path="/academics" element={<Academics />} />
                 </Routes>
               </div>
             </Content>

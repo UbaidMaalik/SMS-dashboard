@@ -7,8 +7,8 @@ export const SidebarData = [
   },
   {
     id: 2,
-    title: "Timetable",
-    path: "/timetable",
+    title: "Academics",
+    path: "/academics",
     icon: "ri-table-line",
   },
   {
