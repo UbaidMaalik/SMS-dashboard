@@ -1,49 +1,59 @@
-import React from 'react'
-import { Tabs } from 'antd';
-
+import React from "react";
+import { Tabs } from "antd";
+import Sections from "./Sections";
+import Subject from "./Subject";
+import AssignSubject from "./AssignSubjects";
 
 function Academics() {
- 
-    const onChangeTab = (key) => {
-        console.log(key);
-      };
+  const onChangeTab = (key) => {
+    console.log(key);
+  };
 
-      const items = [
-        {
-          key: '1',
-          label: `Classes/Sec`,
-          children: <div>
-
-          </div>,
-        },
-        {
-          key: '2',
-          label: ` Subject`,
-          children: <div>
-
-          </div>,
-        },
-        {
-          key: '3',
-          label: `Subjects To Class`,
-          children: <div>
-
-          </div>,
-        },
-        {
-          key: '4',
-          label: `Time Table`,
-          children: <div>
-
-          </div>,
-        },
-      ];
-
-    return (
+  const items = [
+    {
+      key: "1",
+      label: `Classes/Sec`,
+      children: (
         <div>
-           <Tabs defaultActiveKey="1" items={items} onChange={onChangeTab} type="card" />
+          <Sections />
         </div>
-    )
+      ),
+    },
+    {
+      key: "2",
+      label: ` Subject`,
+      children: (
+        <div>
+          <Subject />
+        </div>
+      ),
+    },
+    {
+      key: "3",
+      label: `Subjects To Class`,
+      children: (
+        <div>
+          <AssignSubject />
+        </div>
+      ),
+    },
+    {
+      key: "4",
+      label: `Time Table`,
+      children: <div></div>,
+    },
+  ];
+
+  return (
+    <div>
+      <Tabs
+        defaultActiveKey="1"
+        items={items}
+        onChange={onChangeTab}
+        type="card"
+      />
+    </div>
+  );
 }
 
-export default Academics
+export default Academics;

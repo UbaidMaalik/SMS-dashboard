@@ -486,6 +486,26 @@ border: 1px solid #ccc;
 .card-body {
     background: #434041;
 }
+/* SECTIONS */
+.card-body {
+    background: #ffffff;
+    min-height: 12em;
+    padding-top: 36px;
+}
+.section-card {
+    padding: 0;
+}
+h4.card-title {
+    color: #000;
+    font-size: 18px;
+}
+.card-header {
+    padding: 1em;
+}
+.card-body h6 {
+    color: #000;
+    font-size: 14px;
+}
 @media (max-width:767px) {
     .main-login{
         flex-direction: column-reverse;
