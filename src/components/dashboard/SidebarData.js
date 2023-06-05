@@ -68,12 +68,18 @@ export const SidebarData = [
 
   {
     id: 6,
-    title: "User Managment",
+    title: "Exames",
     path: "/user",
     icon: "ri-user-fill",
   },
   {
     id: 7,
+    title: "User Managment",
+    path: "/user",
+    icon: "ri-user-fill",
+  },
+  {
+    id: 8,
     title: "Logout",
     path: "/logout",
     icon: "ri-logout-box-r-fill",
