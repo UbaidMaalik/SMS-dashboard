@@ -1,8 +1,11 @@
 import React from "react";
 import { SearchOutlined } from "@ant-design/icons";
-import { Radio, Button, Input, Modal, Space, Table } from "antd";
+import { Button, Input, Space, Table } from "antd";
 import { useRef, useState } from "react";
-// import Highlighter from "react-highlight-words";
+import Swal from "sweetalert2";
+import MyModal from "../../components/common/MyModal";
+import AddSubject from "./AddSubject";
+
 const data = [
   {
     key: "1",
@@ -34,15 +37,31 @@ const data = [
   },
 ];
 const SubjectDataTable = () => {
+  const handleDeleteClick = () => {
+    Swal.fire({
+      title: "Confirmation",
+      text: "Are you sure you want to delete this item?",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#d33",
+      cancelButtonColor: "#3085d6",
+      confirmButtonText: "Delete",
+      cancelButtonText: "Cancel",
+      customClass: {
+        confirmButton: "custom-confirm-button-class",
+        cancelButton: "custom-cancel-button-class",
+      },
+    }).then((result) => {
+      if (result.isConfirmed) {
+        Swal.fire("Deleted!", "Your item has been deleted.", "success");
+      }
+    });
+  };
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const showModal = () => {
-    setIsModalOpen(true);
-  };
-  const handleOk = () => {
-    setIsModalOpen(false);
-  };
-  const handleCancel = () => {
-    setIsModalOpen(false);
+  const [IsAddNewModal, setIsAddNewModal] = useState(false);
+
+  const openStdModal = () => {
+    setIsAddNewModal(true);
   };
   const [searchText, setSearchText] = useState("");
   const [searchedColumn, setSearchedColumn] = useState("");
@@ -154,14 +173,17 @@ const SubjectDataTable = () => {
       key: "action",
       render: () => (
         <>
-          <Radio.Group>
-            <Radio.Button value="edit" className="btn-success">
-              <i className="ri-pencil-line"></i>
-            </Radio.Button>
-            <Radio.Button value="delete" className="btn-danger">
-              <i className="ri-close-line"></i>
-            </Radio.Button>
-          </Radio.Group>
+          <div className="action-buttons">
+            <button className="action-button xs" onClick={openStdModal}>
+              <i className="ri-edit-line"></i>
+            </button>
+            <button className="action-button xs" onClick={handleDeleteClick}>
+              <i className="ri-delete-bin-line"></i>
+            </button>
+            <button className="action-button xs">
+              <i className="ri-eye-line"></i>
+            </button>
+          </div>
         </>
       ),
     },
@@ -175,14 +197,13 @@ const SubjectDataTable = () => {
             <Table columns={columns} dataSource={data} />
           </div>
 
-          <Modal
-            title="Basic Modal"
-            open={isModalOpen}
-            onOk={handleOk}
-            onCancel={handleCancel}
+          <MyModal
+            title="Edit Subject"
+            isModalOpen={IsAddNewModal}
+            handleCancel={() => setIsAddNewModal(false)}
           >
-            <Table columns={columns} dataSource={data} />
-          </Modal>
+            <AddSubject />
+          </MyModal>
         </div>
       </div>
     </>

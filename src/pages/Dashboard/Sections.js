@@ -2,9 +2,30 @@ import React, { useState } from "react";
 import MyButton from "../../components/common/MyButton";
 import MyModal from "../../components/common/MyModal";
 import MySelect from "../../components/common/MySelect";
-import { Radio } from "antd";
+import Swal from "sweetalert2";
+import AddSection from "./AddSection";
 
 const Sections = () => {
+  const handleDeleteClick = () => {
+    Swal.fire({
+      title: "Confirmation",
+      text: "Are you sure you want to delete this item?",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#d33",
+      cancelButtonColor: "#3085d6",
+      confirmButtonText: "Delete",
+      cancelButtonText: "Cancel",
+      customClass: {
+        confirmButton: "custom-confirm-button-class",
+        cancelButton: "custom-cancel-button-class",
+      },
+    }).then((result) => {
+      if (result.isConfirmed) {
+        Swal.fire("Deleted!", "Your item has been deleted.", "success");
+      }
+    });
+  };
   const [IsAddNewModal, setIsAddNewModal] = useState(false);
 
   const openStdModal = () => {
@@ -32,10 +53,11 @@ const Sections = () => {
             isModalOpen={IsAddNewModal}
             handleCancel={() => setIsAddNewModal(false)}
           >
-            section / Classes
+            <AddSection />
           </MyModal>
         </div>
-        <div className="row">
+
+        <div className="row mt-3">
           {[1, 2, 3].map((item, i) => (
             <div className="col-md-4">
               <div className="card section-card" key={i}>
@@ -47,17 +69,24 @@ const Sections = () => {
                   <MySelect
                     value={sectionsData?.value}
                     arrayOption={sectionsData}
+                    placeholder="section / class"
                   />
                 </div>
                 <div className="card-footer">
-                  <Radio.Group>
-                    <Radio.Button value="edit" className="btn-success">
-                      <i className="ri-pencil-line"></i>
-                    </Radio.Button>
-                    <Radio.Button value="delete" className="btn-danger">
-                      <i className="ri-close-line"></i>
-                    </Radio.Button>
-                  </Radio.Group>
+                  <div className="action-buttons">
+                    <button className="action-button xs" onClick={openStdModal}>
+                      <i className="ri-edit-line"></i>
+                    </button>
+                    <button
+                      className="action-button xs"
+                      onClick={handleDeleteClick}
+                    >
+                      <i className="ri-delete-bin-line"></i>
+                    </button>
+                    <button className="action-button xs">
+                      <i className="ri-eye-line"></i>
+                    </button>
+                  </div>
                 </div>
               </div>
             </div>

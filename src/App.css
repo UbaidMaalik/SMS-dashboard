@@ -3,7 +3,42 @@
     --text-h3: #484646;
     --action-green: #11a74b;
     --action-del: #881515;
+    --success: #11a74b;
+    --danger: #c71919;
 }
+.btn-success {
+    background: var(--success);
+}
+.btn-danger {
+    background: var(--danger);
+}
+.xs {
+    padding: 5px 9px;
+    font-size: 0.8rem;
+}
+.action-buttons {
+    display: flex;
+    gap: 3px;
+}
+button.action-button {
+    background: #f7f7f7 !important;
+    border: 1px solid #e5e5e5;
+    color: #000000 !important;
+    border-radius: 4px;
+    transition: .25s;
+}
+button.action-button:hover {
+    background: lightgray !important;
+}
+.custom-confirm-button-class {
+    background-color: #d33 !important;
+    /* Add other custom styles for the confirm button */
+  }
+  
+  .custom-cancel-button-class {
+    background-color: var(--button-blue) !important;
+    /* Add other custom styles for the cancel button */
+  }
 body{
     height: 100vh;
 }
@@ -42,17 +77,6 @@ button{
     color: black;
     font-weight: 500;
 }
-  /* .input{
-    background-color: white;
-    border-radius: 0px;
-    height: 32px;
-    max-height: 32px;
-    box-shadow: 0px 0px 11px rgba(0, 0, 0, 0.07);
-    font-size: 14px;
-    border: 2px transparent;
-    margin: 0px;
-
-  } */
   .mt-15{
     margin-top: 25px;
   }
@@ -64,8 +88,6 @@ button{
         font-weight: 500;
     
   }
-  
- 
   .check{
   display: flex;
   font-weight: 400;
@@ -250,6 +272,7 @@ border-radius: 3px;
     height: 2.8em;
     width: 3em !important;
     border-radius: 4px !important;
+    margin-top: 1.3em;
 }
 .add-std{
     border-bottom: 1px solid #ccc;
@@ -336,7 +359,7 @@ a.active {
     margin-right: 1em;
 }
 :where(.css-dev-only-do-not-override-w8mnev).ant-modal {
-    width: 900px !important;
+    width: 90% !important;
 }
 .input-date{
     width: 220px;
@@ -405,7 +428,7 @@ border: 1px solid #ccc;
     border: 5px solid;
     border-image-slice: 1;
     background: var(--gradient) !important;
-    -webkit-background-clip: text !important;
+    /* -webkit-background-clip: text !important; */
     -webkit-text-fill-color: transparent !important;
     border-image-source:  var(--gradient) !important; 
     text-decoration: none;
@@ -414,7 +437,7 @@ border: 1px solid #ccc;
   
   .btn:hover, .btn:focus {
         background: var(--gradient) !important;
-    -webkit-background-clip: none !important;
+    /* -webkit-background-clip: none !important; */
     -webkit-text-fill-color: #fff !important;
     border: 5px solid #fff !important; 
     box-shadow: #222 1px 0 10px;
@@ -505,6 +528,20 @@ h4.card-title {
 .card-body h6 {
     color: #000;
     font-size: 14px;
+}
+/* forms */
+label.inputs-labels {
+    color: #545c62!important;
+    font-weight: 700;
+    font-size: .875em;
+}
+.main-heading h6 {
+    color: #0c0c0c!important;
+    font-weight: 700;
+    font-size: .9em;
+}
+td.ant-table-cell {
+    padding: 7px !important;
 }
 @media (max-width:767px) {
     .main-login{

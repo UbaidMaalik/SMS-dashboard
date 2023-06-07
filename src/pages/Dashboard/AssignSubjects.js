@@ -1,21 +1,45 @@
 import React, { useState } from "react";
 import MyButton from "../../components/common/MyButton";
 import MyModal from "../../components/common/MyModal";
-import { Radio } from "antd";
-
-import SubjectDataTable from "./SubjectDataTable";
+import Swal from "sweetalert2";
 import MySelect from "../../components/common/MySelect";
-import MyInput from "../../components/common/MyInput";
+import AddAssignSubject from "./AddAssignSubject";
 
 const AssignSubject = () => {
+  const handleDeleteClick = () => {
+    Swal.fire({
+      title: "Confirmation",
+      text: "Are you sure you want to delete this item?",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#d33",
+      cancelButtonColor: "#3085d6",
+      confirmButtonText: "Delete",
+      cancelButtonText: "Cancel",
+      customClass: {
+        confirmButton: "custom-confirm-button-class",
+        cancelButton: "custom-cancel-button-class",
+      },
+    }).then((result) => {
+      if (result.isConfirmed) {
+        Swal.fire("Deleted!", "Your item has been deleted.", "success");
+      }
+    });
+  };
   const [IsAddNewModal, setIsAddNewModal] = useState(false);
 
   const openStdModal = () => {
     setIsAddNewModal(true);
   };
-  const genderOptions = [
-    { id: "male", value: "Male" },
-    { id: "female", value: "Female" },
+  const teacherOption = [
+    { id: "1", value: "Shahab" },
+    { id: "2", value: "Kamran" },
+    { id: "3", value: "Kashif" },
+  ];
+  const classOption = [
+    { id: "1", value: "One" },
+    { id: "2", value: "Two" },
+    { id: "3", value: "Three" },
   ];
   return (
     <>
@@ -31,26 +55,34 @@ const AssignSubject = () => {
             />
           </div>
           <MyModal
-            title="Add New Section"
+            title="Assign Subject"
             isModalOpen={IsAddNewModal}
             handleCancel={() => setIsAddNewModal(false)}
           >
-            section / Classes
+            <AddAssignSubject />
           </MyModal>
         </div>
         <div className="row">
           <div className="col-md-12 search-student">
-            <div className="text-primary">{/* <h3>Search Student</h3> */}</div>
+            <div className="text-primary">
+              <h3>Search Subject</h3>
+            </div>
             <div className="row">
-              <div className="col-md-3 std-search-form">
+              <div className="col-md-5 std-search-form">
+                <label className="inputs-labels">Select Teacher</label>
+
                 <MySelect
                   className="custom-select w-100"
+                  arrayOption={teacherOption}
                   placeholder="Select Teacher"
                 />
               </div>
-              <div className="col-md-3 std-search-form">
+              <div className="col-md-5 std-search-form">
+                <label className="inputs-labels">Select Class / Section</label>
+
                 <MySelect
                   className="custom-select w-100"
+                  arrayOption={classOption}
                   placeholder="Select Class / Section"
                 />
               </div>
@@ -76,15 +108,21 @@ const AssignSubject = () => {
                 {/* <MySelect value={sections?.value} arrayOption={sections} /> */}
               </div>
               <div className="card-footer text-center">
-                <div className="w-100 mx-auto">
-                  <Radio.Group>
-                    <Radio.Button value="edit" className="btn-success">
-                      <i className="ri-pencil-line"></i>
-                    </Radio.Button>
-                    <Radio.Button value="delete" className="btn-danger">
-                      <i className="ri-close-line"></i>
-                    </Radio.Button>
-                  </Radio.Group>
+                <div className="w-100 mx-auto justify-content-center">
+                  <div className="action-buttons">
+                    <button className="action-button xs" onClick={openStdModal}>
+                      <i className="ri-edit-line"></i>
+                    </button>
+                    <button
+                      className="action-button xs"
+                      onClick={handleDeleteClick}
+                    >
+                      <i className="ri-delete-bin-line"></i>
+                    </button>
+                    <button className="action-button xs">
+                      <i className="ri-eye-line"></i>
+                    </button>
+                  </div>
                 </div>
               </div>
             </div>
