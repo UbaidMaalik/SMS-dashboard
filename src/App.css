@@ -543,6 +543,12 @@ label.inputs-labels {
 td.ant-table-cell {
     padding: 7px !important;
 }
+.staff-avatar {
+    text-align: center;
+}
+.staff-avatar img {
+    width: 55%;
+}
 
 @media (max-width:767px) {
     .main-login{

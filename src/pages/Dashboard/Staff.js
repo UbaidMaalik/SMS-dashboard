@@ -4,17 +4,25 @@ import SearchStudent from "./SearchStudent";
 import { useState } from "react";
 import MyModal from "../../components/common/MyModal";
 import MySelect from "../../components/common/MySelect";
-import { InboxOutlined } from "@ant-design/icons";
-import { Upload } from "antd";
+import AddStaff from "./AddStaff";
+import SearchStaff from "./SearchStaff";
+
 const Staff = () => {
   const [IsAddNewModal, setIsAddNewModal] = useState(false);
 
   const openStaffModal = () => {
     setIsAddNewModal(true);
   };
-  const genderOptions = [
-    { id: "male", value: "Male" },
-    { id: "female", value: "Female" },
+
+  const typeOptions = [
+    { id: "1", value: "Resigned" },
+    { id: "2", value: "Active" },
+  ];
+  const staffOptions = [
+    { id: "1", value: "HR" },
+    { id: "2", value: "Admission" },
+    { id: "3", value: "Managment" },
+    { id: "4", value: "General" },
   ];
   return (
     <>
@@ -35,26 +43,27 @@ const Staff = () => {
             </div>
             <div className="row">
               <div className="col-md-3 std-search-form">
+                <label className="inputs-labels">Select Department</label>
                 <MySelect
                   className="custom-select w-100"
-                  onChange={(e) => console.log(e)}
-                  value={genderOptions?.value}
-                  arrayOption={genderOptions}
+                  arrayOption={staffOptions}
+                  placeholder="Select Department"
                 />
               </div>
               <div className="col-md-3 std-search-form">
+                <label className="inputs-labels">Select Type</label>
                 <MySelect
                   className="custom-select w-100"
-                  onChange={(e) => console.log(e)}
-                  value={genderOptions?.value}
-                  arrayOption={genderOptions}
+                  arrayOption={typeOptions}
+                  placeholder="Select Type"
                 />
               </div>
               <div className="col-md-4 std-search-form">
+                <label className="inputs-labels">Staff Name</label>
                 <MyInput
                   size="large"
                   className="input-primary w-100"
-                  placeholder="Teacher Name"
+                  placeholder="Staff Name"
                 />
               </div>
               <div className="col-md-2 std-search-form">
@@ -68,129 +77,17 @@ const Staff = () => {
             </div>
           </div>
           <div className="col-md-12 search-student-table">
-            <SearchStudent />
+            {/* <SearchStudent /> */}
+            <SearchStaff />
           </div>
         </div>
 
         <MyModal
-          title="Add New Student"
+          title="Add New Staff"
           isModalOpen={IsAddNewModal}
           handleCancel={() => setIsAddNewModal(false)}
         >
-          <div className="container">
-            <div className="row mb-3">
-              <div className="col-md-3">
-                <Upload.Dragger name="files" action="/upload.do">
-                  <p className="ant-upload-drag-icon">
-                    <InboxOutlined />
-                  </p>
-                  <p className="ant-upload-text p-3">
-                    Click or drag profile photo to upload
-                  </p>
-                </Upload.Dragger>
-              </div>
-              <div className="col-md-3 mt-3">
-                <MyInput
-                  size="large"
-                  className="input-primary w-100 mb-2"
-                  placeholder="Teacher's Name"
-                />
-                <MyInput
-                  size="large"
-                  className="input-primary w-100 mb-2"
-                  placeholder="Guardian's Name"
-                />
-                <input type="date" className="input-date w-100 border-1 mb-2" />
-                <MyInput
-                  size="large"
-                  className="input-primary w-100"
-                  placeholder="Contact Number"
-                />
-              </div>
-              <div className="col-md-3 mt-3">
-                <MyInput
-                  size="large"
-                  className="input-primary w-100 mb-2"
-                  placeholder="Father's Name."
-                />
-                <MyInput
-                  size="large"
-                  className="input-primary w-100 mb-2"
-                  placeholder="Guardian's Occupation"
-                />
-                <MyInput
-                  size="large"
-                  className="input-primary w-100 mb-2"
-                  placeholder="CNIC"
-                />
-                <input type="date" className="input-date w-100 border-1" />
-              </div>
-              <div className="col-md-3 mt-3">
-                <MyInput
-                  size="large"
-                  className="input-primary w-100 mb-2"
-                  placeholder="Father's Occupation"
-                />
-                <MyInput
-                  size="large"
-                  className="input-primary w-100 mb-2"
-                  placeholder="Guardian's Phone"
-                />
-                <MyInput
-                  size="large"
-                  className="input-primary w-100 mb-2"
-                  placeholder="Nationality"
-                />
-                <MyInput
-                  size="large"
-                  className="input-primary w-100"
-                  placeholder="Registration Number"
-                />
-              </div>
-            </div>
-
-            <div className="row mb-2">
-              <div className="col-md-3">
-                <MySelect
-                  className="custom-select w-100"
-                  onChange={(e) => console.log(e)}
-                  arrayOption={genderOptions}
-                  placeholder="Select Gender"
-                ></MySelect>
-              </div>
-              <div className="col-md-3">
-                <MyInput
-                  size="large"
-                  className="input-primary w-100"
-                  placeholder="Age"
-                />
-              </div>
-              <div className="col-md-3">
-                <MyInput
-                  size="large"
-                  className="input-primary w-100"
-                  placeholder="City"
-                />
-              </div>
-              <div className="col-md-3">
-                <MyInput
-                  size="large"
-                  className="input-primary w-100"
-                  placeholder="Nationality"
-                />
-              </div>
-            </div>
-
-            <div className="row mb-3">
-              <div className="col-md-12">
-                <MyInput
-                  size="large"
-                  className="input-primary w-100"
-                  placeholder="Address"
-                />
-              </div>
-            </div>
-          </div>
+          <AddStaff />
         </MyModal>
       </div>
     </>

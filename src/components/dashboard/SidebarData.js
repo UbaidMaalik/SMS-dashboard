@@ -21,13 +21,13 @@ export const SidebarData = [
     id: 4,
     title: "Human Resource",
     path: "/staff",
-    icon: "ri-group-2-fill",
+    icon: "ri-layout-grid-line",
     children: [
       {
         id: 401,
         title: "Staff",
         path: "/staff",
-        icon: "ri-group-fill",
+        icon: "ri-group-line",
       },
 
       {
