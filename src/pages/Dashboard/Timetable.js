@@ -2,6 +2,8 @@ import { useState } from "react";
 import MyButton from "../../components/common/MyButton";
 import MyInput from "../../components/common/MyInput";
 import MySelect from "../../components/common/MySelect";
+import MyModal from "../../components/common/MyModal";
+import AddTimetable from "./AddTimetable";
 
 const Timetable = () => {
   const [IsAddNewModal, setIsAddNewModal] = useState(false);
@@ -9,9 +11,15 @@ const Timetable = () => {
   const openStdModal = () => {
     setIsAddNewModal(true);
   };
-  const genderOptions = [
-    { id: "male", value: "Male" },
-    { id: "female", value: "Female" },
+  const teacherOption = [
+    { id: "1", value: "Shahab" },
+    { id: "2", value: "Kamran" },
+    { id: "3", value: "Kashif" },
+  ];
+  const classOption = [
+    { id: "1", value: "One" },
+    { id: "2", value: "Two" },
+    { id: "3", value: "Three" },
   ];
   return (
     <>
@@ -31,27 +39,22 @@ const Timetable = () => {
               <h3>Student Fees</h3>
             </div>
             <div className="row">
-              <div className="col-md-3 std-search-form">
+              <div className="col-md-5 std-search-form">
+                <label className="inputs-labels">Select Teacher</label>
+
                 <MySelect
                   className="custom-select w-100"
-                  onChange={(e) => console.log(e)}
-                  value={genderOptions?.value}
-                  arrayOption={genderOptions}
+                  arrayOption={teacherOption}
+                  placeholder="Select Teacher"
                 />
               </div>
-              <div className="col-md-3 std-search-form">
+              <div className="col-md-5 std-search-form">
+                <label className="inputs-labels">Select Class / Section</label>
+
                 <MySelect
                   className="custom-select w-100"
-                  onChange={(e) => console.log(e)}
-                  value={genderOptions?.value}
-                  arrayOption={genderOptions}
-                />
-              </div>
-              <div className="col-md-4 std-search-form">
-                <MyInput
-                  size="large"
-                  className="input-primary w-100"
-                  placeholder="Student Name / Registration No. / CNIC No."
+                  arrayOption={classOption}
+                  placeholder="Select Class / Section"
                 />
               </div>
               <div className="col-md-2 std-search-form">
@@ -266,6 +269,13 @@ const Timetable = () => {
             </table>
           </div>
         </div>
+        <MyModal
+          title="Create Timetable"
+          isModalOpen={IsAddNewModal}
+          handleCancel={() => setIsAddNewModal(false)}
+        >
+          <AddTimetable />
+        </MyModal>
       </div>
     </>
   );

@@ -3,6 +3,7 @@ import { Tabs } from "antd";
 import Sections from "./Sections";
 import Subject from "./Subject";
 import AssignSubject from "./AssignSubjects";
+import Timetable from "./Timetable";
 
 function Academics() {
   const onChangeTab = (key) => {
@@ -40,7 +41,11 @@ function Academics() {
     {
       key: "4",
       label: `Time Table`,
-      children: <div></div>,
+      children: (
+        <div>
+          <Timetable />
+        </div>
+      ),
     },
   ];
 

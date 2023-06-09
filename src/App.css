@@ -543,6 +543,7 @@ label.inputs-labels {
 td.ant-table-cell {
     padding: 7px !important;
 }
+
 @media (max-width:767px) {
     .main-login{
         flex-direction: column-reverse;
